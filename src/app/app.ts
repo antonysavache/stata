@@ -1,12 +1,15 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { TrafficStatsManagerComponent } from './components/traffic-stats-manager.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  standalone: true,
+  imports: [TrafficStatsManagerComponent],
+  template: `
+    <app-traffic-stats-manager></app-traffic-stats-manager>
+  `,
+  styles: []
 })
-export class App {
-  protected readonly title = signal('fake-stat');
+export class AppComponent {
+  title = 'fake-stat';
 }
